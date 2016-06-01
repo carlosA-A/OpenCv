@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( smooth_image )
+find_package( OpenCV REQUIRED )
+add_executable( smooth_image smooth_image.cpp )
+target_link_libraries( smooth_image  ${OpenCV_LIBS} )
