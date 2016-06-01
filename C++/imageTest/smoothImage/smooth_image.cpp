@@ -7,12 +7,15 @@ using namespace cv;
 
 int main(int argc, char const *argv[]) {
   Mat img_rgb = imread(argv[1],CV_LOAD_IMAGE_COLOR);
-  Mat img_gry, img_cny;
+  Mat img_gry, img_cny,img_pyr,img_pyr2;
+
   cvtColor(img_rgb, img_gry,COLOR_BGR2GRAY);
+  pyrDown(img_gry, img_pyr);
+  pyrDown(img_pyr,img_pyr2);
   namedWindow("Example Gray", WINDOW_AUTOSIZE);
   namedWindow("Example Canny", WINDOW_AUTOSIZE);
-  imshow("Example Gray", img_gry);
-  Canny(img_gry, img_cny, 10, 100,3,true );
+  imshow("Example Gray", img_pyr2);
+  Canny(img_pyr2, img_cny, 10, 100,3,true );
   imshow("Example Canny", img_cny);
 
 
