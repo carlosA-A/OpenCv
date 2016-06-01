@@ -18,17 +18,22 @@ int main(int argc, char const *argv[]) {
 
       try{
           Mat gray_image;
-          cvtColor( image, gray_image, CV_BGR2GRAY );
 
+          //transform RGB image into grayscale
+          cvtColor( image, gray_image, CV_BGR2GRAY );
+          //Write gray image into local directorie
           imwrite("GrayImage.jpg",gray_image );
 
+          //Create a window to be populated with image
           namedWindow("color",WINDOW_AUTOSIZE);
 
           namedWindow("gray",WINDOW_AUTOSIZE);
-
+          //Display image
           imshow("color",image);
           imshow("gray",gray_image);
+          //Close windows when a button is pressed
           waitKey(0);
+          destroyAllWindows();
 
     }
     catch(cv::Exception& e){
