@@ -8,18 +8,20 @@ using namespace cv;
 
 int main(int argc, char const *argv[]) {
 
-  VideoCapture stream1("small.mp4");
-  stream1.set(CV_CAP_PROP_FRAME_WIDTH , 352);
-  stream1.set(CV_CAP_PROP_FRAME_HEIGHT , 288);
+  VideoCapture open("small.mp4");
 
 
-  if (!stream1.isOpened()) { //check if video device has been initialised
+  if (!open.isOpened()) { //check if video device has been initialised
   cout << "cannot open camera";
   }
 
   while (true) {
     Mat cameraFrame;
-    stream1.read(cameraFrame);
+    open.read(cameraFrame);
+    if (!cameraFrame.data){
+
+      break;
+    }
     imshow("cam", cameraFrame);
     if (waitKey(30) >= 0)
     break;
