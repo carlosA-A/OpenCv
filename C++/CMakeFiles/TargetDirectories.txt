@@ -1,0 +1,1 @@
+/home/bearbeats/OpenCvTraining/C++/CMakeFiles/open_image.dir
