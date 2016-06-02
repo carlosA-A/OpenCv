@@ -14,8 +14,10 @@ int main(int argc, char const *argv[]) {
   pyrDown(img_pyr,img_pyr2);
   namedWindow("Example Gray", WINDOW_AUTOSIZE);
   namedWindow("Example Canny", WINDOW_AUTOSIZE);
-  imshow("Example Gray", img_pyr2);
+   imshow("Example Gray", img_pyr2);
   Canny(img_pyr2, img_cny, 10, 100,3,true );
+  rectangle(img_cny, cvPoint(0,0),  cvPoint(10,10), CV_RGB(0,0,255), 1, 8 );
+
   imshow("Example Canny", img_cny);
 
 
