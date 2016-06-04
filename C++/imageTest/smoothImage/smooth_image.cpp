@@ -24,7 +24,7 @@ int main(int argc, char const *argv[]) {
 
   pyrDown(img_gry, img_pyr);
   pyrDown(img_pyr,img_pyr2);
-  namedWindow("Example Gray", WINDOW_AUTOSIZE);
+  namedWindow("Example Gray", WINDOW_AUTOSIZE
   namedWindow("Example Canny", WINDOW_AUTOSIZE);
    imshow("Example Gray", img_pyr2);
   Canny(img_pyr2, img_cny, 10, 100,3,true );
