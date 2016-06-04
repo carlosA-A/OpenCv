@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
   Mat histImage;
 
   //Read original image
-  src = imread("fruits.jpg");
+  src = imread(argv[1]);
   if(!src.data){
 
     std::cout << "Error image\n" << std::endl;
