@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( reflection )
+find_package( OpenCV REQUIRED )
+add_executable( reflection reflection.cpp )
+target_link_libraries( reflection  ${OpenCV_LIBS} )
