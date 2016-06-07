@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( translation )
+find_package( OpenCV REQUIRED )
+add_executable( translation translation.cpp )
+target_link_libraries( translation  ${OpenCV_LIBS} )
