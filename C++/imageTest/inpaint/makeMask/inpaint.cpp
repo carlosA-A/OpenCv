@@ -10,7 +10,7 @@ int main(int argc, char const *argv[]) {
 
   cvtColor(img, mask, COLOR_RGB2GRAY);
 
-  threshold(mask, mask, 5, 255, THRESH_BINARY_INV);    //Set threshold to change all color over 15 to black while everything under it to 255(white)
+  threshold(mask, mask, 2, 255, THRESH_BINARY_INV);    //Set threshold to change all color over 15 to black while everything under it to 255(white)
   if(!img.data){
 
     std::cout << "Cannot open image" << std::endl;
