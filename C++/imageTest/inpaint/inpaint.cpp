@@ -6,7 +6,7 @@ using namespace cv;
 int main(int argc, char const *argv[]) {
 
   Mat img = imread(argv[1]);
-  Mat mask = Mat::zeros(img.size(), CV_8U);
+  Mat mask = imread(argv[2], IMREAD_GRAYSCALE);
   Mat dst;
 
   if(!img.data){
