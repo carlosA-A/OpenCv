@@ -1,5 +1,0 @@
-cmake_minimum_required(VERSION 2.8)
-project( sharpen )
-find_package( OpenCV REQUIRED )
-add_executable( sharpen sharpen.cpp )
-target_link_libraries( sharpen  ${OpenCV_LIBS} )
