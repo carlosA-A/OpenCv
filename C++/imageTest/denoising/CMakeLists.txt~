@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( estimate_pi )
+find_package( OpenCV REQUIRED )
+add_executable( estimate_pi estimate_pi.cpp )
+target_link_libraries( estimate_pi  ${OpenCV_LIBS} )
