@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]) {
 
   imshow("Original", img);
 
-  cvtColor(img, dst, COLOR_RGB2HSV);
+  cvtColor(img, dst, COLOR_BGR2HSV);
 
   std::vector<Mat> v;
 
@@ -29,6 +29,8 @@ int main(int argc, char const *argv[]) {
   imshow("Hue", v[0]);
   imshow("Saturation", v[1]);
   imshow("Value", v[2]);
+  imshow("HSV", dst);
+
 
   vector<Mat> separatedChannels = showSeparatedChannels(v);
 
