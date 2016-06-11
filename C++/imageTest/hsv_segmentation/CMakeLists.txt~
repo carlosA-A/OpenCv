@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( hsv_conversion )
+find_package( OpenCV REQUIRED )
+add_executable( hsv_conversion hsv_conversion.cpp )
+target_link_libraries( hsv_conversion  ${OpenCV_LIBS} )

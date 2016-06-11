@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project( hsv_conversion )
+project( hsv_segmentation )
 find_package( OpenCV REQUIRED )
-add_executable( hsv_conversion hsv_conversion.cpp )
-target_link_libraries( hsv_conversion  ${OpenCV_LIBS} )
+add_executable( hsv_segmentation hsv_segmentation.cpp )
+target_link_libraries( hsv_segmentation  ${OpenCV_LIBS} )
