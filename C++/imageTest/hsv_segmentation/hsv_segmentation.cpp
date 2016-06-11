@@ -29,6 +29,8 @@ int main(int argc, char const *argv[]) {
 
   imshow("Detect skin", dst2);
 
+  ero
+
   waitKey(0);
 
   return 0;
