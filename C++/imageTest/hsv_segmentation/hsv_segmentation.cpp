@@ -25,7 +25,7 @@ int main(int argc, char const *argv[]) {
 
   cvtColor(img, dst, COLOR_BGR2HSV);
 
-  inRange(dst, LOWER_BOUND, UPPER_BOUND,dst2);
+  inRange(dst, Scalar LOWER_BOUND,Scalar UPPER_BOUND,dst2);
 
   imshow("Detect skin", dst2);
 
