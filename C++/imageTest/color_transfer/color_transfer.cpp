@@ -16,7 +16,6 @@ int main(int argc, char const *argv[]) {
     std::cout << "Error opening image" << std::endl;
     return -1;
   }
-  namedWindow("Original",WINDOW_NORMAL);
 
   imshow("Original Source1", src);
   imshow("Original Source2", tar);
@@ -58,7 +57,7 @@ int main(int argc, char const *argv[]) {
 
   Mat final,finalRGB;
   merge(tar_channels, final);
-  final.convertTo(final, CV_8UC);
+  final.convertTo(final, CV_8UC1);
   cvtColor(final, finalRGB, COLOR_Lab2BGR);
   imshow("Color transfered", finalRGB);
 
