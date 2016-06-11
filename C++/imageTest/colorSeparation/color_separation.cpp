@@ -5,7 +5,7 @@
 using namespace std;
 using namespace cv;
 
-vector<Mat>  showSeparatedChannels(vactor<Mat> channels);
+vector<Mat>  showSeparatedChannels(vector<Mat> channels);
 
 int main(int argc, char const *argv[]) {
 
@@ -48,14 +48,15 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 
-vector<Mat>  showSeparatedChannels(vactor<Mat> channels){
+vector<Mat>  showSeparatedChannels(vector<Mat> channels){
 
-  Mat zeroes = Mat::zeros(channels.size(), channels[0].type());
+  Mat zeroes = Mat::zeros(channels[0].size(), channels[0].type());
   vector<Mat> separatedChannels;
-  for (int i = 0; i < 2; i++) {
+  for (int i = 0; i < 3; i++) {
+    vector<Mat> auxiliary;
 
-    for (int j = 0; j < 2; j++) {
-      vector<Mat> auxiliary;
+
+    for (int j = 0; j < 3; j++) {
       if(i==j){     //For each channel create a new channel with with a color matrix and values of zeoroes for auxiliary colors
         auxiliary.push_back(channels[i]);
       }
