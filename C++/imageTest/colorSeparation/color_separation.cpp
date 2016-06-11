@@ -5,6 +5,8 @@
 using namespace std;
 using namespace cv;
 
+vector<Mat>  showSeparatedChannels(vactor<Mat> channels);
+
 int main(int argc, char const *argv[]) {
 
   Mat img = imread(argv[1]);
@@ -44,4 +46,30 @@ int main(int argc, char const *argv[]) {
 
 
   return 0;
+}
+
+vector<Mat>  showSeparatedChannels(vactor<Mat> channels){
+
+  Mat zeroes = Mat::zeros(channels.size(), channels[0].type());
+  vector<Mat> separatedChannels;
+  for (int i = 0; i < 2; i++) {
+
+    for (int j = 0; j < 2; j++) {
+      vector<Mat> auxiliary;
+      if(i==j){     //For each channel create a new channel with with a color matrix and values of zeoroes for auxiliary colors
+        auxiliary.push_back(channels[i]);
+      }
+      else{
+        auxiliary.push_back(zeroes);  //If not same channel place zeroes
+      }
+    }
+    Mat dst;
+    merge(auxiliary, dst);  //Merge color channel with zeroes into a single array
+    separatedChannels.push_back(dst); //Add color channel to separated channel
+  }
+
+  return separatedChannels;
+
+
+
 }
