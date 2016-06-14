@@ -5,6 +5,7 @@
 using namespace std;
 using namespace cv;
 
+//Tranfer color from one image into another
 int main(int argc, char const *argv[]) {
 
   Mat src,tar,src_lab,tar_lab;
