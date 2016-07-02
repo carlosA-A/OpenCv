@@ -10,6 +10,10 @@ int main(int argc, char const *argv[]) {
   double t0 = (double)getTickCount();
 
   Mat img_rgb = imread(argv[1],CV_LOAD_IMAGE_COLOR);
+  if(!img_rgb.data){
+    std::cout << "Error opening image" << std::endl;
+    return -1;
+  }
   Mat img_gry, img_cny,img_pyr,img_pyr2;
   Vec3b pixel1 = img_rgb.at<Vec3b>(0,0);
   cout << "Value of pixel (0,0): " << (unsigned int)pixel1[1] << endl;
