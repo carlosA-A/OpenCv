@@ -8,7 +8,10 @@ int main(int argc, char const *argv[]) {
 
   Mat img = imread(argv[1]);
   Mat dst1,dst2,dst3,dst4;
-
+  if(!img.data){
+    std::cout << "Error opening image" << std::endl;
+    return -1;
+  }
   //Range to detect color red in image
   inRange(img, Scalar(0,0,100), Scalar(30,40,255), dst1);
   //Kernel to help detect a circle of around 15 pixels by 15 in image

@@ -15,6 +15,11 @@ int main(int argc, char const *argv[]) {
       Mat image;
       image = imread(argv[1],IMREAD_COLOR);
 
+      if(!image.data){
+        std::cout << "Error opening image" << std::endl;
+        return -1;
+      }
+
 
       try{
           Mat gray_image;
